@@ -67,8 +67,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             );
         }
 
-        info!("Attempting to download {}", url);
-
         tokio::spawn(async move {
             if let Err(e) = extract_from_url(&url).await {
                 error!("{}", e);
